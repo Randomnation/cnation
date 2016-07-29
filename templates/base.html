@@ -19,7 +19,7 @@
     <ul class="nav nav-tabs nav-bottom-margin">
         <li role="presentation" class="{{ css1 }}"><a href="{% url 'main:index' %}">Home</a></li>
         <li role="presentation" class="{{ css2 }}"><a href="{% url 'products:products' %}">Products</a></li>
-        <li role="presentation" class="css3"><a href="#">Contact</a></li>
+        <li role="presentation" class="{{ css3 }}"><a href="{% url 'main:contact' %}">Contact</a></li>
     </ul>
 
     {% block content %}
