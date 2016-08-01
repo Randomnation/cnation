@@ -8,5 +8,5 @@ def main_page(request):
 
 
 def contact_page(request):
-    css3 = 'active'
+    css4 = 'active'
     return render_to_response('main/contact.html', locals(), context_instance=RequestContext(request))
