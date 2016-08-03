@@ -3,7 +3,13 @@
 {% block content %}
 
     <div class="well well-lg">
-        <p>Main Page</p>
+        <p>Main Page -
+            {% if user.is_authenticated %}
+                Welcome, {{ user.first_name }}
+            {% else %}
+                Not Logged In
+            {% endif %}
+        </p>
     </div>
 
 {% endblock %}

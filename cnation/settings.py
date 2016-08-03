@@ -14,7 +14,10 @@ SECRET_KEY = 'e%n-hmm^-ln@v*!p1o*okgap*rw09bu!e_ocb*lpx&hofg)4tj'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+LOGIN_URL = '/main/login/'
+LOGIN_REDIRECT_URL = '/main/'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Application definition
 
@@ -25,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'main',
     'products',
 ]
@@ -101,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Australia/Perth'
 
 USE_I18N = True
 
@@ -112,6 +116,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
+
+MEDIA_ROOT = 'media'
+MEDIA_URL = '/images/'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(

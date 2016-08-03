@@ -21,6 +21,18 @@
         <li role="presentation" class="{{ css2 }}"><a href="{% url 'products:products' %}">Products</a></li>
         <li role="presentation" class="{{ css3 }}"><a href="{% url 'order:order' %}">Order Form</a></li>
         <li role="presentation" class="{{ css4 }}"><a href="{% url 'main:contact' %}">Contact</a></li>
+
+        {% if user.is_authenticated %}
+            <li class="login_out_text"><a href="{% url 'main:logout' %}?next=/main/">Logout</a></li>
+            <li class="login_out_text"><a href="{% url 'main:user_profile' %}?next=/main/">Profile</a></li>
+        {% else %}
+            {% if request.get_full_path == "/main/login/" %}
+                <li class="active login_out_text"><a href="{% url 'main:login' %}">Login/Register</a></li>
+            {% else %}
+                <li class="login_out_text"><a href="{% url 'main:login' %}">Login/Register</a></li>
+            {% endif %}
+        {% endif %}
+
     </ul>
 
     {% block content %}

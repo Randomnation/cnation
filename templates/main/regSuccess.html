@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h2>Registration Successful!</h2>
+        <a href="{% url 'main:login' %}"><button class="btn btn-primary" type="submit">Click to login</button></a>
+    </div>
+{% endblock content %}
