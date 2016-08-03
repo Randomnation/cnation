@@ -19,7 +19,7 @@ def order_gen(n):
     range_end = (10**n)-1
     return randint(range_start, range_end)
 
-cust_order_number = 'SO-' + str(random_with_N_digits(6))
+cust_order_number = 'SO-' + str(order_gen(6))
 
 class CustomerOrder(models.Model):
     user = models.OneToOneField(User, related_name='user')
