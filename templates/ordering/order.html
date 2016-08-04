@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
     <div class="well well-lg">
-        <p>Order Page</p>
+        <p>Please use the form below to place your order.</p>
+
+        <form method="POST">{% csrf_token %}
+            <div class="form-group">
+                {{ form|crispy }}
+                <br />
+                <button class="btn btn-primary" type="submit">Place Order</button>
+            </div>
+        </form>
     </div>
 
 {% endblock %}
