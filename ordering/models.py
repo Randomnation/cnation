@@ -9,7 +9,7 @@ class CustomerOrder(models.Model):
     products = models.CharField(max_length=10)
     notes = models.TextField(max_length=500, null=True)
     order_date = models.DateField(auto_now_add=True)
-    order_number = models.CharField(max_length=20, unique=True)
+    order_number = models.CharField(max_length=9, unique=True)
 
     def __unicode__(self):
         return self.order_number
