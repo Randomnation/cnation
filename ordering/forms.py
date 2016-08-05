@@ -6,4 +6,8 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = CustomerOrder
-        fields = ('user', 'notes', 'products', 'order_number')
+        fields = ('user', 'products', 'notes', 'order_number')
+
+    def __init__(self, *args, **kwargs):
+        super(OrderForm, self).__init__(*args, **kwargs)
+        self.fields.keyOrder = ['products', 'notes']
