@@ -25,6 +25,9 @@
         {% if user.is_authenticated %}
             <li class="login_out_text"><a href="{% url 'main:logout' %}?next=/main/">Logout</a></li>
             <li class="login_out_text"><a href="{% url 'main:user_profile' %}?next=/main/">Profile</a></li>
+            {% if user.is_staff %}
+                <li class="login_out_text"><a href="#">Site Admin</a></li>
+            {% endif %}
         {% else %}
             {% if request.get_full_path == "/main/login/" %}
                 <li class="active login_out_text"><a href="{% url 'main:login' %}">Login/Register</a></li>

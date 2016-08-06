@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect, render
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django import forms
@@ -23,8 +23,10 @@ def order_page(request):
 
     if request.method == 'POST':
         if form.is_valid():
+            order = form.save(commit=False)
+            ord_num = order.order_number
             form.save()
-            return render_to_response('ordering/orderSuccess.html')
+            return render(request, 'ordering/orderSuccess.html', locals())
 
     template = loader.get_template('ordering/order.html')
     context = RequestContext(request, locals())
