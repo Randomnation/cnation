@@ -4,6 +4,13 @@
 
     <div class="well well-lg">
         <p>Products Page</p>
+        <br />
+        <ul>
+            {% for p in prod %}
+                <li>{{ p.prod_name }}</li>
+            {% endfor %}
+        </ul>
+
     </div>
 
 {% endblock %}
