@@ -5,11 +5,21 @@
     <div class="well well-lg">
         <p>Products Page</p>
         <br />
-        <ul>
+        <div class="row">
             {% for p in prod %}
-                <li>{{ p.prod_name }}</li>
+                <div class="col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            {{ p.prod_name }}
+                        </div>
+
+                        <div class="panel-body">
+                            {{ p.prod_img }}
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
-        </ul>
+        </div>
     </div>
 
 {% endblock %}
