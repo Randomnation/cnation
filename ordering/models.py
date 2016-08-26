@@ -13,3 +13,7 @@ class CustomerOrder(models.Model):
 
     def __unicode__(self):
         return self.order_number
+
+#
+# class Cart(models.Model):
+#     creation_date = models.DateTimeField(auto_now_add=True)

@@ -8,13 +8,19 @@
         <div class="row">
             {% for p in prod %}
                 <div class="col-md-4">
-                    <div class="panel panel-info">
+                    <div class="panel panel-danger">
                         <div class="panel-heading">
                             {{ p.prod_name }}
                         </div>
 
                         <div class="panel-body">
                             {{ p.prod_img }}
+                        </div>
+
+                        <div class="panel-footer">
+                            <div class="btn btn-primary">
+                                Add to Cart
+                            </div>
                         </div>
                     </div>
                 </div>
